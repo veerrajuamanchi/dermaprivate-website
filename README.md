@@ -22,6 +22,8 @@ Then visit `http://localhost:8080`.
 
 ## Before public launch
 
-Replace the app-store placeholders, `support@dermaprivate.example`, canonical domain placeholder, draft privacy overview, and draft terms overview. Verify every statement about on-device storage, AI provider handling, backups, tracking, and app availability against the released app and gateway configuration.
+Replace the app-store placeholders, `support.dermaprivate@gmail.com` if needed, canonical domain placeholder, draft privacy overview, and draft terms overview. Verify every statement about on-device storage, AI provider handling, backups, tracking, and app availability against the released app and gateway configuration.
+
+The AI setup page links users to `https://console.groq.com/keys` so they can create their own Groq API key. The marketing site never collects or displays API keys.
 
 Do not add medical, HIPAA, zero-retention, security-compliance, clinical-validation, or diagnostic claims without documented evidence and appropriate review.
