@@ -22,4 +22,14 @@
       button.querySelector('span').textContent = expanded ? '+' : '−';
     });
   });
+
+  document.querySelectorAll('.suggest-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const results = document.querySelector(`[data-results="${button.dataset.suggest}"]`);
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      button.textContent = expanded ? 'Suggest products' : 'Hide products';
+      results.hidden = expanded;
+    });
+  });
 })();

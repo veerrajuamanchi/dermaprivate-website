@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#fbfcfc"/>
+  <rect width="1080" height="470" fill="#147a78"/>
+  <circle cx="930" cy="80" r="300" fill="#0d5d5c" opacity=".45"/>
+  <text x="80" y="135" fill="#a9dfd7" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">DERMAPRIVATE</text>
+  <text x="80" y="245" fill="#fff" font-family="Arial, sans-serif" font-size="68" font-weight="800">A routine that</text>
+  <text x="80" y="325" fill="#fff" font-family="Arial, sans-serif" font-size="68" font-weight="800">feels like yours.</text>
+  <text x="80" y="405" fill="#d9efed" font-family="Arial, sans-serif" font-size="27">Start with your shelf or a guided suggestion.</text>
+  <rect x="205" y="560" width="670" height="625" rx="50" fill="#1b3031"/>
+  <rect x="245" y="630" width="590" height="500" rx="28" fill="#fbfcfc"/>
+  <rect x="460" y="650" width="160" height="22" rx="11" fill="#1b3031"/>
+  <text x="300" y="745" fill="#152126" font-family="Arial, sans-serif" font-size="34" font-weight="700">Suggested routine</text>
+  <text x="300" y="785" fill="#5d6c70" font-family="Arial, sans-serif" font-size="22">Generic product types first.</text>
+  <rect x="300" y="835" width="480" height="72" rx="16" fill="#e7f4f2"/><text x="330" y="880" fill="#0d5d5c" font-family="Arial, sans-serif" font-size="23" font-weight="700">Gentle cleanser</text><text x="650" y="880" fill="#147a78" font-family="Arial, sans-serif" font-size="20">Suggest products</text>
+  <rect x="300" y="930" width="480" height="72" rx="16" fill="#f3f7f7"/><text x="330" y="975" fill="#152126" font-family="Arial, sans-serif" font-size="23" font-weight="700">Daily moisturizer</text><text x="650" y="975" fill="#147a78" font-family="Arial, sans-serif" font-size="20">Suggest products</text>
+  <text x="540" y="1250" text-anchor="middle" fill="#0d5d5c" font-family="Arial, sans-serif" font-size="25" font-weight="700">AI-suggested or built by you · Review every step</text>
+</svg>

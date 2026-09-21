@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#e7f4f2"/>
+  <circle cx="540" cy="540" r="470" fill="#147a78"/>
+  <rect x="315" y="130" width="450" height="820" rx="72" fill="#1b3031"/>
+  <rect x="343" y="185" width="394" height="710" rx="45" fill="#fbfcfc"/>
+  <rect x="470" y="207" width="140" height="25" rx="12" fill="#1b3031"/>
+  <text x="390" y="315" fill="#152126" font-family="Arial, sans-serif" font-size="38" font-weight="700">My routine</text>
+  <text x="390" y="350" fill="#5d6c70" font-family="Arial, sans-serif" font-size="20">Good morning</text>
+  <rect x="382" y="400" width="316" height="275" rx="28" fill="#ffffff" stroke="#dce6e5" stroke-width="4"/>
+  <text x="410" y="450" fill="#152126" font-family="Arial, sans-serif" font-size="24" font-weight="700">Morning routine</text>
+  <circle cx="660" cy="442" r="10" fill="#65a68f"/>
+  <rect x="410" y="485" width="38" height="38" rx="10" fill="#dcefed"/><text x="468" y="512" fill="#152126" font-family="Arial, sans-serif" font-size="21">Gentle cleanser</text>
+  <rect x="410" y="545" width="38" height="38" rx="10" fill="#dbe6f3"/><text x="468" y="572" fill="#152126" font-family="Arial, sans-serif" font-size="21">Hydrating serum</text>
+  <rect x="410" y="605" width="38" height="38" rx="10" fill="#f1e9d5"/><text x="468" y="632" fill="#152126" font-family="Arial, sans-serif" font-size="21">Daily moisturizer</text>
+  <rect x="382" y="705" width="316" height="84" rx="22" fill="#e7f4f2"/>
+  <circle cx="423" cy="747" r="16" fill="#147a78"/><text x="417" y="754" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700">✓</text>
+  <text x="455" y="743" fill="#0d5d5c" font-family="Arial, sans-serif" font-size="18" font-weight="700">Review first</text>
+  <text x="455" y="768" fill="#5d6c70" font-family="Arial, sans-serif" font-size="15">Your routine, your choice</text>
+  <text x="540" y="1010" text-anchor="middle" fill="#0d5d5c" font-family="Arial, sans-serif" font-size="32" font-weight="800">DERMAPRIVATE</text>
+</svg>
