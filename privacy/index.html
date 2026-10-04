@@ -25,14 +25,17 @@
         <div class="notice"><span class="notice-mark">!</span><p><strong>Important:</strong> This plain-language overview is not a final privacy policy. It describes the app's current behavior and should be replaced with reviewed legal language before public app availability.</p></div>
 
         <h2>Private by default</h2>
-        <p>You do not need a DermaPrivate account to use the app. Your Routine Snapshot, routine, product shelf, preferences, and check-ins are stored on your device by default. Core routine planning and compatibility tools work offline; DermaPrivate does not use a remote routine server for these features.</p>
+        <p>You do not need a DermaPrivate account to use the app. Your Routine Snapshot, routine, product shelf, preferences, and check-ins are stored on your device by default. Core routine planning and compatibility tools work offline. DermaPrivate does not store or sync your personal routine data to an account or backend.</p>
         <p>DermaPrivate does not require skin photos. The Routine Snapshot uses answers you provide about your routine preferences and is a cosmetic planning tool, not a medical assessment or diagnosis.</p>
 
         <h2>Optional AI Assist</h2>
-        <p>AI Assist is optional. If you choose to set it up, you provide your own Groq API key. The key is stored securely on your device and is not included in an exported routine backup. Information for approved AI requests is sent directly from your device to Groq. Your Groq account and Groq's privacy terms apply. Your local Routine Snapshot remains available without AI.</p>
+        <p>AI Assist is optional and requires you to enable it. If you choose to set it up, you provide your own Groq API key. The key is stored securely on your device and is not included in an exported routine backup. Information for AI features you enable and approve is sent directly from your device to Groq. Your Groq account and Groq's privacy terms apply. Your local Routine Snapshot remains available without AI.</p>
 
         <h2>Optional online product lookup</h2>
-        <p>You can search the on-device product catalog without an online lookup. If you choose online product search, the product name or barcode you enter is sent to the product-data provider. Your Routine Snapshot, profile, and saved routine are not included in that lookup request.</p>
+        <p>You can search the on-device product catalog without an online lookup. Online search happens only when you tap to search; that request sends the product name or barcode you enter to the product-data provider. Your Routine Snapshot, profile, and saved routine are not included in that lookup request.</p>
+
+        <h2>Product catalog updates</h2>
+        <p>The app can contact DermaPrivate's catalog service to check for product-data updates and download a catalog for local use. The version check sends a broad rollout-group value, not your routine or profile. The downloaded catalog is cached on your device.</p>
 
         <h2>Backups and deletion</h2>
         <p>You can clear local app data from the app's settings. The app also provides an encrypted backup that you can save where you choose. The backup includes routine data and excludes AI API keys. Removing the app may also remove data stored only on that device; keep a backup if you want to move your data to another device.</p>
