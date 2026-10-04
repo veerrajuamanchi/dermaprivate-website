@@ -85,7 +85,7 @@
           <article class="feature-card"><span class="feature-icon">◌</span><h3>Routine organizer</h3><p>Add products you already use, set routine times, and arrange steps to suit your day.</p></article>
           <article class="feature-card"><span class="feature-icon">✓</span><h3>Local routine checks</h3><p>Review ingredient and product-fit notes on your device, including when you are offline.</p></article>
           <article class="feature-card"><span class="feature-icon">⌂</span><h3>Journey tracking</h3><p>Keep local check-ins and see how consistently your routine fits into your days.</p></article>
-          <article class="feature-card"><span class="feature-icon">⌕</span><h3>Optional product lookup</h3><p>Search the on-device catalog. If you choose online search, only the product name or barcode is sent to the product-data provider.</p></article>
+          <article class="feature-card"><span class="feature-icon">⌕</span><h3>Curated brand matches</h3><p>Find curated products from approved brands without a Groq key. Online catalog search is a separate, optional action.</p></article>
           <article class="feature-card feature-card-accent"><h3>Optional AI Assist</h3><p>If you set up AI with your own key, information you've approved for a request goes directly from your device to Groq. Your local snapshot works without AI.</p></article>
         </div>
       </div>
@@ -94,15 +94,29 @@
     <section id="product-options" class="section-pad section-muted" aria-labelledby="product-options-title">
       <div class="container product-flow-grid">
         <div class="section-intro">
-          <p class="eyebrow">Optional product suggestions</p>
-          <h2 id="product-options-title">Start with a routine step. Choose products when you’re ready.</h2>
-          <p class="section-lede">Keep a routine step generic, add the product you already use, or ask AI Assist for a branded match. Review product and ingredient details before saving; suggestions never change your routine automatically.</p>
-          <p class="affiliate-note"><span aria-hidden="true">i</span> Some product links may be affiliate links. DermaPrivate may earn a commission if you buy through one, at no extra cost to you. Product availability and pricing can change.</p>
+          <p class="eyebrow">Curated product matches</p>
+          <h2 id="product-options-title">See the product, ingredients, and official store link.</h2>
+          <p class="section-lede">Curated matches work without an AI request or Groq API key. Product cards show thumbnails, Budget / Clinical / Luxury tiers, key ingredients, and the full ingredient list. Review every match before adding it to your routine.</p>
+          <p class="direct-store-note"><span aria-hidden="true">↗</span> Curated product links go directly to official brand stores. They are not affiliate links, and DermaPrivate earns no commission from them.</p>
+          <div class="brand-groups" aria-label="The 12 brands in the curated catalog">
+            <article><h3>Dermatologist-recommended & barrier support</h3><p>CeraVe · La Roche-Posay · EltaMD</p></article>
+            <article><h3>Clinical & ingredient-first</h3><p>The Ordinary · SkinCeuticals · Paula’s Choice</p></article>
+            <article><h3>Premium & experiential</h3><p>Sunday Riley · Tatcha · Augustinus Bader</p></article>
+            <article><h3>Classic & global drugstore</h3><p>Clinique · Neutrogena · Olay</p></article>
+          </div>
         </div>
-        <div class="routine-demo" aria-label="Illustrative optional product suggestion in a routine">
-          <div class="demo-header"><span>Your routine step</span><span class="demo-status">You stay in control</span></div>
-          <div class="demo-product"><span class="product-swatch swatch-moisturizer"></span><div><strong>Daily moisturizer</strong><small>Generic routine step</small></div><span class="suggest-button" aria-hidden="true">Suggest a match</span></div>
-          <p class="demo-disclaimer">Optional AI Assist can show a branded product suggestion and available purchase information. Review it before deciding whether to add or buy anything.</p>
+        <div class="suggested-product-card" aria-label="Illustrative example of a curated product suggestion">
+          <div class="suggested-card-header"><span>Curated match</span><span class="brand-tier">Budget</span></div>
+          <div class="curated-image-tile" role="img" aria-label="Illustrative product thumbnail for CeraVe Moisturizing Cream">
+            <div class="curated-jar"><span class="curated-jar-brand">CeraVe</span><span class="curated-jar-rule"></span><span class="curated-jar-name">Moisturizing<br> Cream</span></div>
+          </div>
+          <p class="suggested-brand">CeraVe</p>
+          <h3>Moisturizing Cream</h3>
+          <p class="suggested-reason">A curated match for a moisturizer routine step.</p>
+          <p class="suggested-ingredients"><strong>Key ingredients</strong><br>Ceramides · Hyaluronic acid</p>
+          <p class="inci-caption">The app shows the full ingredient list so you can review it before adding a product.</p>
+          <a class="button button-small" href="https://www.cerave.com/skincare/moisturizers/moisturizing-cream" target="_blank" rel="noopener noreferrer">View on CeraVe <span aria-hidden="true">↗</span></a>
+          <p class="mock-caption">Illustrative product card. Product thumbnails are shown in the app.</p>
         </div>
       </div>
     </section>
@@ -132,6 +146,8 @@
           <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-4" id="faq-button-4">Do I have to use AI Assist?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-4" class="faq-answer" role="region" aria-labelledby="faq-button-4" hidden><p>No. AI Assist is optional. Your Routine Snapshot and core routine tools work locally without it. If you choose AI, you provide your own Groq key and approve the information sent for AI requests.</p></div></div>
           <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-5" id="faq-button-5">What does online product search share?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-5" class="faq-answer" role="region" aria-labelledby="faq-button-5" hidden><p>Online lookup sends only the product name or barcode you enter to the product-data provider. Your Routine Snapshot, profile, and routine are not included.</p></div></div>
           <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-6" id="faq-button-6">Are product recommendations medical advice?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-6" class="faq-answer" role="region" aria-labelledby="faq-button-6" hidden><p>No. Suggestions are cosmetic routine-planning information for you to review. They do not diagnose, prescribe, or replace professional medical advice.</p></div></div>
+          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-7" id="faq-button-7">Where do curated product links go?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-7" class="faq-answer" role="region" aria-labelledby="faq-button-7" hidden><p>They open the selected brand’s official store. The curated links are direct and do not earn DermaPrivate a commission.</p></div></div>
+          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-8" id="faq-button-8">Do I need a Groq key for curated product matches?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-8" class="faq-answer" role="region" aria-labelledby="faq-button-8" hidden><p>No. Curated brand matches are available without a Groq key or AI request. AI Assist is a separate optional feature.</p></div></div>
         </div>
       </div>
     </section>
