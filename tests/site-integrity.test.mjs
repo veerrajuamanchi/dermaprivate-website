@@ -56,6 +56,7 @@ test('how it works and features explain the compatibility, Today, and Pro gates'
   assert.match(html, /Ingredient compatibility is available during the 14-day preview and with Pro/i);
   assert.match(html, /Your skin profile and routine stay on your device by default/i);
   assert.match(html, /Snapshot is a cosmetic planning tool\. It does not assess or diagnose a skin condition\./i);
+  assert.doesNotMatch(html, /class=["']journey-label["']>\s*0[1-3]\s*[—–-]/i, 'step labels should not repeat their numbered index');
 });
 
 test('homepage uses one current-build hero screenshot and no fabricated UI preview', () => {
