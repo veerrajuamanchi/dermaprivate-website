@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Replace the placeholder domain before launch.
-Sitemap: https://REPLACE-WITH-CANONICAL-DOMAIN.example/sitemap.xml
+Sitemap: https://www.dermaprivate.app/sitemap.xml

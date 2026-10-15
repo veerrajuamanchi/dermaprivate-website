@@ -3,158 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbfcfc">
+  <meta name="theme-color" content="#fbfaf5">
   <meta name="impact-site-verification" value="44f699c6-46b7-4114-8f5e-15931b50a96a">
-  <meta name="description" content="A private skincare routine planner. No account and no DermaPrivate backend storing your personal skincare data. No medical diagnosis.">
+  <meta name="description" content="Know what you’re layering. Build an AM/PM routine from products you own, check ingredient compatibility, and keep your skin profile and routine on your iPhone by default.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="DermaPrivate — Your routine, private by default">
-  <meta property="og:description" content="Plan your skincare routine on your device. No account, no personal routine data stored by DermaPrivate, no diagnosis.">
-  <meta property="og:url" content="https://dermaprivate-website.onrender.com/index.html">
-  <link rel="canonical" href="https://dermaprivate-website.onrender.com/index.html">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <title>DermaPrivate — Your routine, private by default</title>
+  <meta property="og:site_name" content="DermaPrivate">
+  <meta property="og:title" content="DermaPrivate — Know what you’re layering">
+  <meta property="og:description" content="Build an AM/PM routine from products you own, check ingredient compatibility, and keep your skin profile and routine on your iPhone by default.">
+  <meta property="og:url" content="https://www.dermaprivate.app/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://www.dermaprivate.app/">
+  <link rel="icon" href="/assets/brand/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <title>DermaPrivate — Know what you’re layering</title>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="DermaPrivate home">
-        <img src="assets/logo-mark.svg" alt="" width="32" height="32">
-        <span>DermaPrivate</span>
+      <a class="brand" href="/" aria-label="DermaPrivate home">
+        <img class="brand-wordmark" src="/assets/brand/header-wordmark.png" alt="DermaPrivate by Amanchi Labs" width="900" height="300">
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">☰</span></button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#how-it-works">How it works</a><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="ai-setup/index.html">Optional AI</a><a href="#faq">FAQ</a>
+        <details class="nav-group">
+          <summary>Product</summary>
+          <div class="nav-dropdown">
+            <a href="/#how-it-works">How it works</a>
+            <a href="/#features">Features</a>
+            <a href="/#faq">FAQ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Privacy &amp; access</summary>
+          <div class="nav-dropdown">
+            <a href="/privacy/">Privacy overview</a>
+            <a href="/ai-data/">AI &amp; data use</a>
+            <a href="/ai-setup/">AI setup</a>
+            <a href="/accessibility/">Accessibility</a>
+            <a href="/terms/">Terms</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Support</summary>
+          <div class="nav-dropdown">
+            <a href="mailto:support@amanchilabs.com">Email support</a>
+            <a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a>
+          </div>
+        </details>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero section-pad" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Private by default. No account. No diagnosis.</p>
-          <h1 id="hero-title">Your skincare routine, kept on your device.</h1>
-          <p class="hero-lede">Build a simple morning and evening routine around the products you already own. Your Routine Snapshot, product shelf, preferences, and check-ins stay on your device. No account is needed, and no DermaPrivate backend stores your personal skincare data. Core routine tools work offline.</p>
-          <p class="hero-detail">AI and online product lookup are your choice. Only when you enable AI or tap online search does request information go to its disclosed provider. Separately, the app may check for catalog updates using a broad rollout-group value, never your routine or profile.</p>
-          <div class="hero-actions"><a class="button" href="#how-it-works">See how it works</a><a class="text-link" href="#privacy">How your data stays local <span aria-hidden="true">→</span></a></div>
-          <p class="fine-print">No skin photos required. No medical diagnosis or treatment.</p>
-        </div>
-        <div class="hero-visual" aria-label="Illustrative app preview">
-          <div class="glow"></div>
-          <div class="phone" role="img" aria-label="Illustrative Routine Snapshot showing a local morning and evening routine starting point">
-            <div class="phone-notch"></div>
-            <div class="app-bar"><span>Routine Snapshot</span><span class="avatar">DP</span></div>
-            <p class="phone-greeting">Your routine<br>starting point</p>
-            <p class="phone-date">Based on your answers · Saved on device</p>
-            <div class="routine-card">
-              <div class="card-heading"><strong>Morning</strong><span class="status-dot">●</span></div>
-              <div class="product-row"><span class="product-icon cleanser"></span><span>Gentle cleanse</span><span class="order">01</span></div>
-              <div class="product-row"><span class="product-icon serum"></span><span>Moisturize</span><span class="order">02</span></div>
-              <div class="product-row"><span class="product-icon sun"></span><span>Sun protection</span><span class="order">03</span></div>
-              <div class="card-heading evening-heading"><strong>Evening</strong><span class="status-dot">●</span></div>
-              <div class="product-row"><span class="product-icon lotion"></span><span>Simple evening steps</span><span class="order">PM</span></div>
-            </div>
-            <div class="check-card"><div><span class="check-icon">✓</span><strong>Cosmetic routine planning</strong></div><p>Not a medical assessment</p></div>
-            <div class="phone-footer"><span class="active">Today</span><span>Routine</span><span>Journey</span></div>
+          <p class="eyebrow">A routine built around what you own</p>
+          <h1 id="hero-title">Know what you’re layering.</h1>
+          <p class="hero-lede">Build an AM/PM routine from products you already own. Check ingredient compatibility while your skin profile and routine stay on your iPhone by default.</p>
+          <p class="hero-detail">Start with your products or answer optional Routine Snapshot questions for an editable starting point. Review suggestions and decide what belongs in your plan. Optional online lookup and AI features explain what they share before you choose to use them.</p>
+          <div class="hero-actions">
+            <a class="button" href="#how-it-works">See how it works <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#privacy">How app privacy works</a>
           </div>
-          <p class="preview-label">Illustrative app preview</p>
+          <p class="fine-print">Ingredient compatibility is available during the 14-day preview and with Pro. Cosmetic information, not a diagnosis or treatment.</p>
         </div>
+        <figure class="hero-art" aria-label="Current DermaPrivate app screen">
+          <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+          <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+          <div class="hero-screen-card">
+            <img class="hero-app-screen" src="/assets/screenshots/today-routine-build12.png" alt="DermaPrivate Today view with a morning step marked complete and an evening routine step ready to mark complete." width="368" height="275" fetchpriority="high">
+          </div>
+          <figcaption class="screen-caption"><span>Today</span><span>AM / PM routine</span></figcaption>
+        </figure>
+      </div>
+      <div class="container outcome-bar" aria-label="What DermaPrivate helps you do">
+        <span>Organize what you own</span><span aria-hidden="true">·</span><span>Check ingredient compatibility</span><span aria-hidden="true">·</span><span>Plan AM and PM</span>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="DermaPrivate at a glance"><div class="container trust-inner"><span>Private by default</span><span>No account</span><span>No personal-data backend</span><span>No diagnosis</span></div></section>
-
-    <section id="how-it-works" class="section-pad section-muted" aria-labelledby="how-title">
+    <section id="how-it-works" class="section section-sand" aria-labelledby="how-title">
       <div class="container">
-        <div class="section-intro centered"><p class="eyebrow">A clear place to start</p><h2 id="how-title">A simple routine, built around your real life.</h2><p class="section-lede">Start with your preferences, then organize and follow a routine at your own pace.</p></div>
-        <div class="steps-grid">
-          <article class="step"><span class="step-number">1</span><h3>Make a Routine Snapshot</h3><p>Answer a few questions about how your skin feels, the products you use, and the routine you prefer. Your answers stay on your device.</p></article>
-          <article class="step"><span class="step-number">2</span><h3>Shape your AM and PM routine</h3><p>Use the suggested starting point or add your own products. Arrange routine windows and make changes whenever you like.</p></article>
-          <article class="step"><span class="step-number">3</span><h3>Check in and keep track</h3><p>Mark routine steps as you go and review your consistency in Journey. Your routine history is stored locally.</p></article>
+        <div class="section-heading">
+          <p class="eyebrow">Three simple parts</p>
+          <h2 id="how-title">Know what you’re layering</h2>
+          <p>Build a routine from products you already own, check for potential ingredient conflicts, and follow today’s plan.</p>
+        </div>
+        <div class="journey-grid">
+          <article class="journey-card">
+            <span class="journey-index">01</span>
+            <p class="journey-label">01 — Start with your products</p>
+            <h3>Build your routine</h3>
+            <p>Add your skincare products and place them into morning and evening steps. Or answer optional Routine Snapshot questions for an editable starting point you can review and change.</p>
+            <span class="journey-symbol" aria-hidden="true">◌</span>
+          </article>
+          <article class="journey-card journey-card-featured">
+            <span class="journey-index">02</span>
+            <p class="journey-label">02 — Check how products fit together</p>
+            <h3>Ingredient compatibility</h3>
+            <p>Check available ingredient information for potential conflicts across your routine. This is informational cosmetic guidance, not a diagnosis. Ingredient compatibility is available during the 14-day preview and with Pro.</p>
+            <span class="journey-symbol" aria-hidden="true">✓</span>
+          </article>
+          <article class="journey-card">
+            <span class="journey-index">03</span>
+            <p class="journey-label">03 — Follow today’s plan</p>
+            <h3>Today and Journey</h3>
+            <p>See your planned morning and evening steps and mark them complete. With Pro, use Journey to review your routine history over time.</p>
+            <span class="journey-symbol" aria-hidden="true">↗</span>
+          </article>
+        </div>
+        <p class="section-footnote">Snapshot is a cosmetic planning tool. It does not assess or diagnose a skin condition.</p>
+      </div>
+    </section>
+
+    <section id="features" class="section" aria-labelledby="features-title">
+      <div class="container feature-layout">
+        <div class="section-heading feature-heading">
+          <p class="eyebrow">Made for your shelf</p>
+          <h2 id="features-title">Keep the routine yours.</h2>
+          <p>Organize products you already use, check how they fit together, and adjust your AM/PM plan as it changes.</p>
+          <a class="text-link" href="/ai-data/">See what stays on your device and what can be shared <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="feature-list">
+          <article class="feature-row"><span class="feature-number">01</span><div><h3>Your product shelf</h3><p>Organize the products you use and assign them to morning and evening steps.</p></div><span class="feature-arrow" aria-hidden="true">↗</span></article>
+          <article class="feature-row"><span class="feature-number">02</span><div><h3>Ingredient compatibility</h3><p>Check available ingredient information for potential conflicts across your routine. Informational cosmetic guidance, not a diagnosis. Available during the 14-day preview and with Pro.</p></div><span class="feature-arrow" aria-hidden="true">↗</span></article>
+          <article class="feature-row"><span class="feature-number">03</span><div><h3>A plan for today</h3><p>See your planned steps, mark them complete, and record a check-in.</p></div><span class="feature-arrow" aria-hidden="true">↗</span></article>
+          <article class="feature-row"><span class="feature-number">04</span><div><h3>Journey</h3><p>With Pro, review your routine history over time. Your skin profile and routine stay on your device by default.</p></div><span class="feature-arrow" aria-hidden="true">↗</span></article>
+          <article class="feature-row"><span class="feature-number">05</span><div><h3>Optional AI Assist</h3><p>Before enabling it, review what information an AI feature sends and where it goes.</p></div><a class="feature-arrow" href="/ai-data/" aria-label="Read AI and data use details">→</a></article>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section-pad" aria-labelledby="features-title">
-      <div class="container">
-        <div class="section-intro"><p class="eyebrow">Useful, without getting in the way</p><h2 id="features-title">Your products. Your routine. Your call.</h2></div>
-        <div class="feature-grid">
-          <article class="feature-card"><span class="feature-icon">◷</span><h3>Routine Snapshot</h3><p>Turn your self-reported preferences into a cosmetic routine starting point, saved on your device.</p></article>
-          <article class="feature-card"><span class="feature-icon">◌</span><h3>Routine organizer</h3><p>Add products you already use, set routine times, and arrange steps to suit your day.</p></article>
-          <article class="feature-card"><span class="feature-icon">✓</span><h3>Local routine checks</h3><p>Review ingredient and product-fit notes on your device, including when you are offline.</p></article>
-          <article class="feature-card"><span class="feature-icon">⌂</span><h3>Journey tracking</h3><p>Keep local check-ins and see how consistently your routine fits into your days.</p></article>
-          <article class="feature-card"><span class="feature-icon">⌕</span><h3>Curated brand matches</h3><p>Find curated products from approved brands without a Groq key. Online catalog search is a separate, optional action.</p></article>
-          <article class="feature-card feature-card-accent"><h3>Optional AI Assist</h3><p>If you set up AI with your own key, information you've approved for a request goes directly from your device to Groq. Your local snapshot works without AI.</p></article>
+    <section id="privacy" class="privacy-band" aria-labelledby="privacy-title">
+      <div class="container privacy-band-inner">
+        <div class="privacy-mark" aria-hidden="true">◇</div>
+        <div class="privacy-band-copy">
+          <p class="eyebrow">Private by design. Local by default.</p>
+          <h2 id="privacy-title">Your skin profile and routine stay on your device by default.</h2>
+          <p>Core routine features need no DermaPrivate account or cloud sync. Optional AI, product lookup, and catalog updates have separate data paths.</p>
         </div>
+        <a class="button button-outline-light" href="/ai-data/">Explore app data use <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
-    <section id="product-options" class="section-pad section-muted" aria-labelledby="product-options-title">
-      <div class="container product-flow-grid">
-        <div class="section-intro">
-          <p class="eyebrow">Curated product matches</p>
-          <h2 id="product-options-title">See the product, ingredients, and official store link.</h2>
-          <p class="section-lede">Curated matches work without an AI request or Groq API key. Product cards show thumbnails, Budget / Clinical / Luxury tiers, key ingredients, and the full ingredient list. Review every match before adding it to your routine.</p>
-          <p class="direct-store-note"><span aria-hidden="true">↗</span> Curated product links go directly to official brand stores. They are not affiliate links, and DermaPrivate earns no commission from them.</p>
-          <div class="brand-groups" aria-label="The 12 brands in the curated catalog">
-            <article><h3>Dermatologist-recommended & barrier support</h3><p>CeraVe · La Roche-Posay · EltaMD</p></article>
-            <article><h3>Clinical & ingredient-first</h3><p>The Ordinary · SkinCeuticals · Paula’s Choice</p></article>
-            <article><h3>Premium & experiential</h3><p>Sunday Riley · Tatcha · Augustinus Bader</p></article>
-            <article><h3>Classic & global drugstore</h3><p>Clinique · Neutrogena · Olay</p></article>
-          </div>
-        </div>
-        <div class="suggested-product-card" aria-label="Illustrative example of a curated product suggestion">
-          <div class="suggested-card-header"><span>Curated match</span><span class="brand-tier">Budget</span></div>
-          <div class="curated-image-tile" role="img" aria-label="Illustrative product thumbnail for CeraVe Moisturizing Cream">
-            <div class="curated-jar"><span class="curated-jar-brand">CeraVe</span><span class="curated-jar-rule"></span><span class="curated-jar-name">Moisturizing<br> Cream</span></div>
-          </div>
-          <p class="suggested-brand">CeraVe</p>
-          <h3>Moisturizing Cream</h3>
-          <p class="suggested-reason">A curated match for a moisturizer routine step.</p>
-          <p class="suggested-ingredients"><strong>Key ingredients</strong><br>Ceramides · Hyaluronic acid</p>
-          <p class="inci-caption">The app shows the full ingredient list so you can review it before adding a product.</p>
-          <a class="button button-small" href="https://www.cerave.com/skincare/moisturizers/moisturizing-cream" target="_blank" rel="noopener noreferrer">View on CeraVe <span aria-hidden="true">↗</span></a>
-          <p class="mock-caption">Illustrative product card. Product thumbnails are shown in the app.</p>
-        </div>
-      </div>
+    <section class="medical-note" aria-label="Medical boundary">
+      <div class="container medical-note-inner"><span aria-hidden="true">i</span><p><strong>Cosmetic routine organization only.</strong> DermaPrivate does not diagnose skin conditions, prescribe treatment, or replace advice from a healthcare professional.</p></div>
     </section>
 
-    <section class="notice-section"><div class="container notice"><span class="notice-mark">i</span><p><strong>Cosmetic guidance only.</strong> DermaPrivate helps organize skincare routines. It does not diagnose skin conditions, assess medical concerns, prescribe treatment, or replace professional medical advice. Your Routine Snapshot reflects your own answers; it is not a medical assessment.</p></div></section>
-
-    <section id="privacy" class="privacy-section section-pad" aria-labelledby="privacy-title">
-      <div class="container privacy-grid">
-        <div><p class="eyebrow">Your data stays close</p><h2 id="privacy-title">No DermaPrivate backend stores your personal routine.</h2><p class="privacy-lede">Your routine data lives on your device. Core planning and routine-checking tools run locally and work offline, with no account.</p><a class="text-link" href="privacy/index.html">Read the privacy overview <span aria-hidden="true">→</span></a></div>
-        <div class="privacy-points">
-          <p><span>01</span>Your Routine Snapshot, product shelf, routine, and check-ins are stored on your device by default.</p>
-          <p><span>02</span>No account is required, and DermaPrivate does not store your personal routine or profile on a backend.</p>
-          <p><span>03</span>AI Assist is optional. When you set it up, information for approved requests goes directly from your device to Groq; your key stays on your device.</p>
-          <p><span>04</span>Online product lookup sends the product name or barcode you enter, not your profile or routine.</p>
-          <p><span>05</span>A product-catalog update check sends a broad rollout-group value only. It does not include your routine or profile.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section-pad" aria-labelledby="faq-title">
+    <section id="faq" class="section faq-section" aria-labelledby="faq-title">
       <div class="container faq-layout">
-        <div class="section-intro"><p class="eyebrow">Questions, answered</p><h2 id="faq-title">A little more clarity.</h2></div>
+        <div class="section-heading"><p class="eyebrow">Good to know</p><h2 id="faq-title">A few clear answers.</h2></div>
         <div class="faq-list">
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-1" id="faq-button-1">Do I need an account or internet connection?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-1" class="faq-answer" role="region" aria-labelledby="faq-button-1" hidden><p>No account is required. Your routine and snapshot are stored on your device, and core routine tools work offline. AI is opt-in, and online product search happens only when you tap to search.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-2" id="faq-button-2">Does DermaPrivate store my routine on a server?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-2" class="faq-answer" role="region" aria-labelledby="faq-button-2" hidden><p>No. Your routine, snapshot, and profile stay on your device; DermaPrivate does not store them on a backend. The app does contact a catalog service to check for product updates, using only a broad rollout-group value. Optional AI and online lookup send request information to their disclosed providers when you choose those features.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-3" id="faq-button-3">Does DermaPrivate diagnose skin conditions?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-3" class="faq-answer" role="region" aria-labelledby="faq-button-3" hidden><p>No. DermaPrivate offers cosmetic skincare education and routine organization only. It is not a medical assessment, diagnosis, treatment, or substitute for advice from a healthcare professional.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-4" id="faq-button-4">Do I have to use AI Assist?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-4" class="faq-answer" role="region" aria-labelledby="faq-button-4" hidden><p>No. AI Assist is optional. Your Routine Snapshot and core routine tools work locally without it. If you choose AI, you provide your own Groq key and approve the information sent for AI requests.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-5" id="faq-button-5">What does online product search share?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-5" class="faq-answer" role="region" aria-labelledby="faq-button-5" hidden><p>Online lookup sends only the product name or barcode you enter to the product-data provider. Your Routine Snapshot, profile, and routine are not included.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-6" id="faq-button-6">Are product recommendations medical advice?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-6" class="faq-answer" role="region" aria-labelledby="faq-button-6" hidden><p>No. Suggestions are cosmetic routine-planning information for you to review. They do not diagnose, prescribe, or replace professional medical advice.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-7" id="faq-button-7">Where do curated product links go?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-7" class="faq-answer" role="region" aria-labelledby="faq-button-7" hidden><p>They open the selected brand’s official store. The curated links are direct and do not earn DermaPrivate a commission.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-8" id="faq-button-8">Do I need a Groq key for curated product matches?<span aria-hidden="true">+</span></button></h3><div id="faq-answer-8" class="faq-answer" role="region" aria-labelledby="faq-button-8" hidden><p>No. Curated brand matches are available without a Groq key or AI request. AI Assist is a separate optional feature.</p></div></div>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-button-1">Do I have to use Routine Snapshot, or can I build my own routine?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-button-1" hidden><p>No. Add your own products, place them into routine windows, and arrange the steps yourself. Routine Snapshot is optional; if you use it, you can review and edit its suggested starting point.</p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-button-2">What does ingredient compatibility tell me?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-button-2" hidden><p>It checks the ingredient information available for your products and flags potential conflicts across your routine. Results are informational cosmetic guidance, not a medical assessment. Compatibility checks are available during the 14-day preview and with Pro.</p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-button-3">Is DermaPrivate medical advice?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-button-3" hidden><p>No. DermaPrivate helps you organize cosmetic skincare routines. It doesn’t diagnose skin conditions, prescribe treatment, or replace advice from a dermatologist or other qualified professional.</p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-button-4">Where is my routine and skin profile stored?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-button-4" hidden><p>Your skin profile, questionnaire answers, routine, and ingredient analysis stay on your iPhone by default. Core routine features don’t require a DermaPrivate account or DermaPrivate cloud sync.</p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-button-5">What information is sent when I use an online feature?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-button-5" hidden><p>If the built-in product catalog can’t find a product, optional lookup sends the product name you entered to the lookup provider. A catalog version check sends a rollout bucket number, not your profile or routine. <a href="/ai-data/">See the separate data paths.</a></p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-button-6">What does AI Assist share, and can it change my routine?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-6" role="region" aria-labelledby="faq-button-6" hidden><p>AI Assist is optional and, in this release, requires your own Groq account and API key. Before you authorize a request, the app shows the specific information to be sent. That information goes directly to Groq and is subject to Groq’s policies. AI suggestions don’t change your routine automatically; you decide what to save or ignore. <a href="/ai-data/">Read the AI and data use details.</a></p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-7" id="faq-button-7">Are product links affiliate links?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-7" role="region" aria-labelledby="faq-button-7" hidden><p>No. The current product links go directly to brand websites. DermaPrivate does not currently earn a commission or receive purchase attribution from them. Once you leave the app, the brand’s own privacy practices apply.</p></div></article>
+          <article class="faq-item"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-8" id="faq-button-8">What’s included with Pro?<span aria-hidden="true">+</span></button></h3><div class="faq-answer" id="faq-8" role="region" aria-labelledby="faq-button-8" hidden><p>Routine setup, product entry, and daily check-ins are free. Ingredient compatibility is available for 14 days after you add your first product; Pro keeps it available and also unlocks advanced recommendations, routine history, and export. Pro is a one-time purchase, with the price shown by the App Store before you buy.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="cta-section section-pad"><div class="container cta-inner"><p class="eyebrow">Private by default</p><h2>Start with your routine, on your terms.</h2><p>No account. No personal routine data stored by DermaPrivate. No diagnosis. Just a local place to organize the skincare products you already use.</p><a class="button button-light" href="#how-it-works">See how it works</a><p class="fine-print light">AI and online search share request information only when you enable or use them. Catalog checks do not include your routine or profile.</p></div></section>
+    <section class="closing-band">
+      <div class="container closing-inner"><p class="eyebrow">Start with your shelf</p><h2>See how a simple routine comes together.</h2><a class="button" href="#how-it-works">Explore the app experience <span aria-hidden="true">→</span></a></div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html"><img src="assets/logo-mark.svg" alt="" width="28" height="28"><span>DermaPrivate</span></a><p class="footer-note">Cosmetic skincare education and routine organization only. Not medical advice or diagnosis. Optional AI and online lookup use disclosed providers.</p></div><div class="footer-links"><a href="privacy/index.html">Privacy</a><a href="terms/index.html">Terms</a><a href="ai-setup/index.html">AI setup</a><a href="mailto:support.dermaprivate@gmail.com">Contact</a><a href="mailto:support.dermaprivate@gmail.com?subject=Accessibility%20feedback">Accessibility feedback</a></div><p class="copyright">© 2026 DermaPrivate. All rights reserved.</p></div></footer>
-  <script src="script.js" defer></script>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand-block">
+        <a class="footer-brand" href="/" aria-label="DermaPrivate home"><img src="/assets/brand/app-icon.png" alt="" width="44" height="44"><span><strong>DermaPrivate</strong><small>BY AMANCHI LABS</small></span></a>
+        <p>Your private skincare routine companion.</p>
+        <a class="footer-company" href="https://amanchilabs.com/" target="_blank" rel="noopener noreferrer">A product by Amanchi Labs <span aria-hidden="true">↗</span></a>
+      </div>
+      <nav class="footer-group" aria-label="Product links"><h2>Product</h2><a href="/#how-it-works">How it works</a><a href="/#features">Features</a><a href="/#faq">FAQ</a></nav>
+      <nav class="footer-group" aria-label="Privacy and accessibility links"><h2>Privacy & access</h2><a href="/privacy/">Privacy overview</a><a href="/ai-data/">AI & data use</a><a href="/ai-setup/">AI setup</a><a href="/accessibility/">Accessibility</a><a href="/terms/">Terms</a></nav>
+      <nav class="footer-group" aria-label="Support links"><h2>Support</h2><a href="mailto:support@amanchilabs.com">Email support</a><a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a></nav>
+    </div>
+    <div class="container footer-bottom"><p>© 2026 Amanchi Labs. All rights reserved.</p><a href="mailto:support@amanchilabs.com">Contact</a><a href="/privacy/">Privacy</a></div>
+  </footer>
+  <script src="/script.js" defer></script>
 </body>
 </html>

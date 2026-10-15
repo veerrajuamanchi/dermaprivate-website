@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfaf5">
+  <meta name="description" content="Learn what DermaPrivate stores on your device and what information optional app network features send to providers.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DermaPrivate">
+  <meta property="og:title" content="AI and data use — DermaPrivate">
+  <meta property="og:description" content="A plain-language map of local app data, BYOK AI requests, product lookup, and catalog updates.">
+  <meta property="og:url" content="https://www.dermaprivate.app/ai-data/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://www.dermaprivate.app/ai-data/">
+  <link rel="icon" href="/assets/brand/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <title>AI and data use — DermaPrivate</title>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="/" aria-label="DermaPrivate home"><img class="brand-wordmark" src="/assets/brand/header-wordmark.png" alt="DermaPrivate by Amanchi Labs" width="900" height="300"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <details class="nav-group">
+          <summary>Product</summary>
+          <div class="nav-dropdown">
+            <a href="/#how-it-works">How it works</a>
+            <a href="/#features">Features</a>
+            <a href="/#faq">FAQ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Privacy &amp; access</summary>
+          <div class="nav-dropdown">
+            <a href="/privacy/">Privacy overview</a>
+            <a href="/ai-data/">AI &amp; data use</a>
+            <a href="/ai-setup/">AI setup</a>
+            <a href="/accessibility/">Accessibility</a>
+            <a href="/terms/">Terms</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Support</summary>
+          <div class="nav-dropdown">
+            <a href="mailto:support@amanchilabs.com">Email support</a>
+            <a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a>
+          </div>
+        </details>
+      </nav>
+  </div></header>
+  <main id="main-content">
+    <section class="legal-hero"><div class="container"><p class="eyebrow">Mobile app data paths</p><h1>AI and data use</h1><p class="lead">Routine organization is local to your device. When an optional app feature uses a network, its request follows a separate path described below.</p></div></section>
+    <article class="container legal-content">
+      <p class="status-note"><strong>This page describes the mobile app.</strong> Website handling is separate and is covered in the <a href="/privacy/">privacy overview</a>.</p>
+
+      <h2>What stays on your device</h2>
+      <p>The app stores your routine, product shelf, preferences, Routine Snapshot answers, and check-ins on your device by default. A DermaPrivate account is not required. AI keys are stored in secure device storage.</p>
+
+      <h2>Optional AI Assist: device to Groq</h2>
+      <ol>
+        <li>You choose to enable AI Assist and review the information request in the app.</li>
+        <li>The app narrows the request to information relevant to that AI action and checks authorization before sending.</li>
+        <li>For the current iOS release settings, the app sends an HTTPS request directly from the device to Groq’s API at <code>api.groq.com/openai/v1/chat/completions</code>. The request includes your key as the Groq authorization credential.</li>
+      </ol>
+      <p>The BYOK request does not pass through a DermaPrivate routine server. Groq receives the approved request and its API credential; Groq’s own terms and data handling apply. AI is optional and does not silently replace your saved routine.</p>
+      <p>Groq says it retains usage metadata and does not normally retain inference inputs or outputs. It may temporarily log inputs and outputs for service reliability or abuse investigation for up to 30 days; Groq’s data controls describe an organization-level opt-out. DermaPrivate cannot see which Groq data-control setting applies to your account. Read <a href="https://console.groq.com/docs/your-data" target="_blank" rel="noopener noreferrer">Groq’s current data-handling details <span aria-hidden="true">↗</span></a> before sending information.</p>
+      <p><a href="/ai-setup/">See AI setup steps <span aria-hidden="true">→</span></a></p>
+
+      <h2>Product catalog updates</h2>
+      <p>The app can check for catalog updates in the background. After a successful check, it waits 24 hours before checking again; a failed check may be tried again on a later app launch. It sends a broad rollout bucket from 0 to 99 to <code>api.dermaprivate.app</code>, not the raw install identifier or your routine. If a newer catalog is available, the app downloads and caches it on the device.</p>
+
+      <h2>Online product lookup</h2>
+      <p>The app checks its available catalogs and local cache first. If no result is available and you search online, the search text you entered is sent to Open Beauty Facts. A matching response can be cached on your device. Your routine and profile are not included in that product search request.</p>
+
+      <h2>Retailer links and affiliate labels</h2>
+      <p>Some retailer links in the app may be affiliate links. When a link is marked as affiliate, the app labels it and says DermaPrivate may earn a commission. Whether that applies depends on the individual link. No blanket statement is made that all links are commission-free.</p>
+
+      <h2>Website data is separate</h2>
+      <p>This page concerns the mobile app. The website does not collect an app key or app routine. For the website’s static files, host requests, and the limits of what has been confirmed about hosting logs, see the <a href="/privacy/">privacy overview</a>.</p>
+
+      <h2>Questions</h2>
+      <p>Email <a href="mailto:support@amanchilabs.com">support@amanchilabs.com</a>.</p>
+      <p class="legal-updated">Reviewed against the local iOS app source: October 14, 2026.</p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container footer-main">
+    <div class="footer-brand-block"><a class="footer-brand" href="/" aria-label="DermaPrivate home"><img src="/assets/brand/app-icon.png" alt="" width="44" height="44"><span><strong>DermaPrivate</strong><small>BY AMANCHI LABS</small></span></a><p>Your private skincare routine companion.</p><a class="footer-company" href="https://amanchilabs.com/" target="_blank" rel="noopener noreferrer">A product by Amanchi Labs ↗</a></div>
+    <nav class="footer-group" aria-label="Product links"><h2>Product</h2><a href="/#how-it-works">How it works</a><a href="/#features">Features</a><a href="/#faq">FAQ</a></nav>
+    <nav class="footer-group" aria-label="Privacy and accessibility links"><h2>Privacy & access</h2><a href="/privacy/">Privacy overview</a><a href="/ai-data/">AI & data use</a><a href="/ai-setup/">AI setup</a><a href="/accessibility/">Accessibility</a><a href="/terms/">Terms</a></nav>
+    <nav class="footer-group" aria-label="Support links"><h2>Support</h2><a href="mailto:support@amanchilabs.com">Email support</a><a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a></nav>
+  </div><div class="container footer-bottom"><p>© 2026 Amanchi Labs. All rights reserved.</p><a href="mailto:support@amanchilabs.com">Contact</a><a href="/privacy/">Privacy</a></div></footer>
+  <script src="/script.js" defer></script>
+</body>
+</html>
