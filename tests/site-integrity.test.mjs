@@ -12,6 +12,7 @@ const pages = [
   '/ai-setup/',
   '/ai-data/',
   '/accessibility/',
+  '/content-rights/',
 ];
 const fileFor = (route) => route === '/'
   ? path.join(root, 'index.html')
@@ -99,6 +100,22 @@ test('accessibility page is candid and does not claim untested feature support',
   assert.doesNotMatch(html, /supports VoiceOver|supports Dynamic Type|fully accessible/i);
 });
 
+test('Content Rights page distinguishes attribution from permission and separates license layers', () => {
+  const html = htmlFor('/content-rights/');
+  assert.match(html, /<h1>DermaPrivate Content Rights &amp; Attribution<\/h1>/);
+  assert.match(html, /Last updated:\s*October 15, 2026/i);
+  assert.match(html, /does not grant visitors permission to reuse third-party materials/i);
+  assert.match(html, /does not.*by itself.*sponsorship, endorsement, certification, or a partnership/i);
+  assert.match(html, /Open Database License \(ODbL\)/i);
+  assert.match(html, /Database Contents License/i);
+  assert.match(html, /Creative Commons Attribution.?ShareAlike/i);
+  assert.match(html, /image.*license.*version|version.*image.*license/i);
+  assert.match(html, /brand-hosted image|publicly accessible.*does not.*permission/i);
+  assert.match(html, /support@amanchilabs\.com/);
+  assert.doesNotMatch(html, /all (?:brand )?images are used with permission|every image is licensed|all third-party content is cleared/i);
+  for (const link of ['https://world.openbeautyfacts.org/', 'https://openfoodfacts.github.io/documentation/docs/Product-Opener/api/tutorials/license-be-on-the-legal-side/', 'https://opendatacommons.org/licenses/odbl/1-0/', 'https://opendatacommons.org/licenses/dbcl/1-0/']) assert.ok(html.includes(link), `missing rights reference ${link}`);
+});
+
 test('all pages share accessible site navigation and a footer with key links', () => {
   for (const route of pages) {
     const html = htmlFor(route);
@@ -108,6 +125,7 @@ test('all pages share accessible site navigation and a footer with key links', (
     for (const target of ['/privacy/', '/terms/', '/ai-setup/', '/ai-data/', '/accessibility/']) {
       assert.ok(html.includes(`href="${target}"`), `${route} missing ${target}`);
     }
+    assert.match(html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '', /<a href=["']\/content-rights\/["'][^>]*>Content Rights<\/a>/i, `${route} missing Content Rights footer link`);
   }
 });
 
