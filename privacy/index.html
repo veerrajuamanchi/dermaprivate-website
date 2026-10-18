@@ -51,7 +51,7 @@
       </nav>
   </div></header>
   <main id="main-content">
-    <section class="legal-hero"><div class="container"><p class="eyebrow">Privacy &amp; data</p><h1>DermaPrivate Privacy Policy</h1><p class="lead">Effective date: October 15, 2026 · Last updated: October 14, 2026</p></div></section>
+    <section class="legal-hero"><div class="container"><p class="eyebrow">Privacy &amp; data</p><h1>DermaPrivate Privacy Policy</h1><p class="lead">Effective date: October 15, 2026 · Last updated: October 17, 2026</p></div></section>
     <article class="container legal-content">
 <p class="status-note"><strong>Privacy contact:</strong> <a href="mailto:support@amanchilabs.com">support@amanchilabs.com</a></p>
 <h2>1. Who we are</h2>
@@ -62,9 +62,9 @@
 <h2>2. Privacy at a glance</h2>
 <p>Your routines, saved products, profile preferences, and check-ins are stored on your device by default.</p>
 <p>We do not provide account-based routine synchronization or operate a cloud backup service for your routines.</p>
-<p>Optional product lookup sends a product name or barcode to Open Beauty Facts when a match is not available in the app’s existing catalogs or cache.</p>
+<p>Optional product lookup sends a product name or barcode to Open Beauty Facts when a match is not available in the app’s local lookup cache.</p>
 <p>Optional AI Assist uses your own Groq API key and sends selected information to Groq after you authorize the request.</p>
-<p>Catalog checks, remote images, purchases, and external links involve separate services, as described below.</p>
+<p>Product lookup, remote images, purchases, and external links involve separate services, as described below.</p>
 <p>Our website provides information about the app and does not process purchases.</p>
 <p>You can use the app’s settings to manage local data and optional AI features.</p>
 <h2>3. Information stored in the mobile app</h2>
@@ -77,12 +77,10 @@
 <p>Local-first storage does not mean that every app record is separately encrypted by DermaPrivate. Device security, passcode protection, and backup settings also affect protection of your information.</p>
 <h2>4. App network requests</h2>
 <p>Online features may disclose ordinary connection information, including your IP address, request time, and technical request headers, to the receiving service and its infrastructure.</p>
-<h3>Catalog checks and downloads</h3>
-<p>The app may contact the DermaPrivate catalog service at <code>api.dermaprivate.app</code> to check for and download catalog updates.</p>
-<p>Version-check requests include a rollout-group number between 0 and 99. They are not designed to include your routine, skin profile, or raw installation identifier. Checks may occur periodically when the app starts.</p>
-<p>The catalog service and its hosting or delivery providers may process technical request information to deliver, secure, and troubleshoot the service.</p>
+<h3>Catalog updates</h3>
+<p>Automatic catalog checks and downloads are currently disabled. The app does not contact the DermaPrivate catalog service for catalog updates and clears entries downloaded by earlier versions from its local cache.</p>
 <h3>Open Beauty Facts product lookup</h3>
-<p>The app checks its available catalogs and local cache before using Open Beauty Facts as a fallback.</p>
+<p>The app checks its local lookup cache before using Open Beauty Facts.</p>
 <p>If a match is not found and an online lookup is made:</p>
 <ul><li>A product-name lookup sends the search text to a search endpoint.</li><li>A barcode lookup sends the barcode to a product endpoint.</li></ul>
 <p>These requests go directly from your device to Open Beauty Facts. They include an identifying User-Agent containing the DermaPrivate app name, version, and business support email address. They do not include your skin profile or routine.</p>
@@ -90,7 +88,7 @@
 <p>Successful lookup results are cached locally for 30 days. Product information you deliberately save to your routine may remain after the lookup cache expires.</p>
 <p>Open Beauty Facts processes requests under its own <a href="https://world.openbeautyfacts.org/privacy">privacy policy</a>.</p>
 <h3>Remote product images</h3>
-<p>When the app displays a remotely hosted product image, it requests that image from the host identified by the catalog entry. Hosts may include brands, product-data services, and content-delivery providers.</p>
+<p>When the app displays a remotely hosted product image, it requests that image from the host identified by the product lookup result or suggestion. Hosts may include product-data services and content-delivery providers.</p>
 <p>The image host receives the requested URL and ordinary connection information. The app does not intentionally include your routine or skin profile in image requests. Image hosts may change as the catalog changes.</p>
 <h2>5. Optional AI Assist and Groq</h2>
 <p>AI Assist is optional. It is not required for core routine setup, editing, daily check-ins, or on-device compatibility rules.</p>
@@ -131,7 +129,7 @@
 <p>Please do not send API keys, passwords, or unnecessary sensitive information.</p>
 <h2>9. How we use and disclose information</h2>
 <p>We use information to:</p>
-<ul><li>Provide the website and app features you request.</li><li>Maintain locally stored routines and preferences.</li><li>Support catalog access and optional product lookup.</li><li>Obtain an AI response when you authorize a request.</li><li>Enable or restore purchases.</li><li>Respond to support and privacy requests.</li><li>Maintain security and troubleshoot services.</li></ul>
+<ul><li>Provide the website and app features you request.</li><li>Maintain locally stored routines and preferences.</li><li>Support optional product lookup.</li><li>Obtain an AI response when you authorize a request.</li><li>Enable or restore purchases.</li><li>Respond to support and privacy requests.</li><li>Maintain security and troubleshoot services.</li></ul>
 <p>Information is disclosed to recipients as described in this policy. We may also disclose information we hold when reasonably necessary to comply with legal obligations, respond to lawful requests, prevent fraud, or protect rights and safety.</p>
 <p>The app does not provide an account-based routine server or routine synchronization service. Locally stored routines are not uploaded to us merely because you create or use them.</p>
 <h2>10. Retention and deletion</h2>
