@@ -93,7 +93,7 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
   for (let section = 1; section <= 16; section++) assert.match(html, new RegExp(`<h2>${section}\\.`), `missing policy section ${section}`);
 });
 
-test('build-13 privacy copy matches product lookup behavior and keeps OBF retention unresolved', () => {
+test('build-13 privacy copy matches product lookup behavior and accurately scopes OBF log evidence', () => {
   const html = htmlFor('/privacy/');
   assert.match(html, /checks available local catalogs and its on-device lookup cache/i);
   assert.match(html, /product-name or routine-step\/category search/i);
@@ -101,7 +101,10 @@ test('build-13 privacy copy matches product lookup behavior and keeps OBF retent
   assert.match(html, /go directly from your device to Open Beauty Facts/i);
   assert.match(html, /30 days/i);
   assert.match(html, /8 requests per 60 seconds/i);
-  assert.match(html, /have not verified whether lookup query\/IP logs are retained or for how long/i);
+  assert.match(html, /lists visitor IP addresses and logs/i);
+  assert.match(html, /three-year storage period/i);
+  assert.match(html, /does not separately specify whether direct API request paths, search text, or barcode values are included/i);
+  assert.match(html, /does not verify the exact configuration or retention applied to each live API request/i);
   assert.doesNotMatch(html, /Remote product images|remotely hosted product image|affiliate network|may receive commission|Catalog updates/i);
 });
 
