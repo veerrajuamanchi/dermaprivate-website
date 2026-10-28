@@ -76,6 +76,10 @@ test('AI and data use distinguishes the website, local app data, and provider re
   assert.match(aiData, /Groq/i);
   assert.match(aiData, /BYOK/i);
   assert.match(aiData, /website/i);
+  assert.match(aiData, /lookup by barcode number/i);
+  assert.match(aiData, /go directly from your device to Open Beauty Facts/i);
+  assert.match(aiData, /accepted iOS build 1\.0\.1 \(13\)/i);
+  assert.doesNotMatch(aiData, /catalog updates|rollout bucket|affiliate links|may earn a commission/i);
   assert.doesNotMatch(htmlFor('/'), /directly from your device to Groq|direct to Groq/i);
 });
 
@@ -236,12 +240,13 @@ test('robots and sitemap use the preferred host and include every information pa
   assert.doesNotMatch(sitemap, /onrender\.com|https:\/\/dermaprivate\.app\//);
 });
 
-test('FAQ reflects current direct brand links and contains no affiliate claims', () => {
+test('FAQ reflects current direct brand and Google links without affiliate claims', () => {
   const html = htmlFor('/');
   const faq = html.match(/<section id=["']faq["'][\s\S]*?<\/section>/i)?.[0] ?? '';
   assert.equal((faq.match(/class=["']faq-item["']/g) ?? []).length, 8);
   for (const phrase of ['Do I have to use Routine Snapshot, or can I build my own routine?', 'What does ingredient compatibility tell me?', 'Is DermaPrivate medical advice?', 'Where is my routine and skin profile stored?', 'What information is sent when I use an online feature?', 'What does AI Assist share, and can it change my routine?', 'Are product links affiliate links?', 'What’s included with Pro?']) assert.ok(faq.includes(phrase), `missing FAQ: ${phrase}`);
-  assert.match(faq, /go directly to brand websites/i);
-  assert.match(faq, /does not currently earn a commission or receive purchase attribution/i);
+  assert.match(faq, /direct brand website or a Google product search/i);
+  assert.match(faq, /does not configure Rakuten or another affiliate network/i);
+  assert.match(faq, /does not earn commission or purchase attribution/i);
   assert.doesNotMatch(faq, /may earn a commission|conditional.*affiliate|affiliate status depends/i);
 });

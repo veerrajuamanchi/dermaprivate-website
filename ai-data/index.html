@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DermaPrivate">
   <meta property="og:title" content="AI and data use — DermaPrivate">
-  <meta property="og:description" content="A plain-language map of local app data, BYOK AI requests, product lookup, and catalog updates.">
+  <meta property="og:description" content="A plain-language map of local app data, optional BYOK AI, product lookup, and external product links.">
   <meta property="og:url" content="https://www.dermaprivate.app/ai-data/">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://www.dermaprivate.app/ai-data/">
@@ -68,21 +68,19 @@
       <p>Groq says it retains usage metadata and does not normally retain inference inputs or outputs. It may temporarily log inputs and outputs for service reliability or abuse investigation for up to 30 days; Groq’s data controls describe an organization-level opt-out. DermaPrivate cannot see which Groq data-control setting applies to your account. Read <a href="https://console.groq.com/docs/your-data" target="_blank" rel="noopener noreferrer">Groq’s current data-handling details <span aria-hidden="true">↗</span></a> before sending information.</p>
       <p><a href="/ai-setup/">See AI setup steps <span aria-hidden="true">→</span></a></p>
 
-      <h2>Product catalog updates</h2>
-      <p>The app can check for catalog updates in the background. After a successful check, it waits 24 hours before checking again; a failed check may be tried again on a later app launch. It sends a broad rollout bucket from 0 to 99 to <code>api.dermaprivate.app</code>, not the raw install identifier or your routine. If a newer catalog is available, the app downloads and caches it on the device.</p>
-
       <h2>Online product lookup</h2>
-      <p>The app checks its available catalogs and local cache first. If no result is available and you search online, the search text you entered is sent to Open Beauty Facts. A matching response can be cached on your device. Your routine and profile are not included in that product search request.</p>
+      <p>The app checks available catalogs and its on-device lookup cache first. A product-name or routine-step/category search, or a lookup by barcode number, can then go directly from your device to Open Beauty Facts. The request contains the search text or barcode and the technical fields needed for the lookup; it does not include your profile, Snapshot answers, ingredient avoidances, or routine. A result may be cached on your device.</p>
+      <p>Open Beauty Facts receives the network request, including an IP address and ordinary request metadata. Its published visitor policy covers its services and describes IP/log retention, but does not separately specify whether each direct API request path, search term, or barcode is retained. The exact production API logging for those fields is not verified. <a href="/privacy/">Read the published policy and the limits of what is known about API logs.</a></p>
 
-      <h2>Retailer links and affiliate labels</h2>
-      <p>Some retailer links in the app may be affiliate links. When a link is marked as affiliate, the app labels it and says DermaPrivate may earn a commission. Whether that applies depends on the individual link. No blanket statement is made that all links are commission-free.</p>
+      <h2>External product links</h2>
+      <p>When you choose to open a product link, this release opens a direct brand website or a Google product search. It does not configure Rakuten or another affiliate network, add affiliate campaign identifiers, or earn commission or purchase attribution through these links. The destination receives the URL, which may include a product or brand name, and ordinary connection information; its privacy practices apply after you leave the app.</p>
 
       <h2>Website data is separate</h2>
       <p>This page concerns the mobile app. The website does not collect an app key or app routine. For the website’s static files, host requests, and the limits of what has been confirmed about hosting logs, see the <a href="/privacy/">privacy overview</a>.</p>
 
       <h2>Questions</h2>
       <p>Email <a href="mailto:support@amanchilabs.com">support@amanchilabs.com</a>.</p>
-      <p class="legal-updated">Reviewed against the local iOS app source: October 14, 2026.</p>
+      <p class="legal-updated">Reviewed against accepted iOS build 1.0.1 (13) source: October 28, 2026.</p>
     </article>
   </main>
   <footer class="site-footer"><div class="container footer-main">
