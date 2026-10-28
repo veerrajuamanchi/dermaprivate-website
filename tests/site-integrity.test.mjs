@@ -85,12 +85,35 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
   assert.equal(meta(html, 'og:url'), 'https://www.dermaprivate.app/privacy/');
   assert.match(html, /<h1>DermaPrivate Privacy Policy<\/h1>/);
   assert.match(html, /Effective date:\s*October 15, 2026/i);
-  assert.match(html, /Last updated:\s*October 14, 2026/i);
+  assert.match(html, /Last updated:\s*October 28, 2026/i);
   assert.match(html, /Amanchi Labs LLC, doing business as Amanchi Labs/);
   assert.match(html, /100 most recent entries/);
   assert.match(html, /cached locally for 30 days/);
   assert.match(html, /support@amanchilabs\.com/);
   for (let section = 1; section <= 16; section++) assert.match(html, new RegExp(`<h2>${section}\\.`), `missing policy section ${section}`);
+});
+
+test('build-13 privacy copy matches product lookup behavior and keeps OBF retention unresolved', () => {
+  const html = htmlFor('/privacy/');
+  assert.match(html, /checks available local catalogs and its on-device lookup cache/i);
+  assert.match(html, /product-name or routine-step\/category search/i);
+  assert.match(html, /lookup by barcode number/i);
+  assert.match(html, /go directly from your device to Open Beauty Facts/i);
+  assert.match(html, /30 days/i);
+  assert.match(html, /8 requests per 60 seconds/i);
+  assert.match(html, /have not verified whether lookup query\/IP logs are retained or for how long/i);
+  assert.doesNotMatch(html, /Remote product images|remotely hosted product image|affiliate network|may receive commission|Catalog updates/i);
+});
+
+test('support page is reachable, identifies the confirmed contact, and links to privacy details', () => {
+  const html = htmlFor('/support/');
+  assert.equal(canonical(html), 'https://www.dermaprivate.app/support/');
+  assert.equal(meta(html, 'og:url'), 'https://www.dermaprivate.app/support/');
+  assert.match(html, /<h1>DermaPrivate Support<\/h1>/);
+  assert.match(html, /mailto:support@amanchilabs\.com\?subject=DermaPrivate%20support/);
+  assert.match(html, /href="\/privacy\/"/);
+  assert.match(htmlFor('/'), /href="\/support\/"/);
+  assert.match(htmlFor('/privacy/'), /href="\/support\/"/);
 });
 
 test('accessibility page is candid and does not claim untested feature support', () => {
@@ -206,6 +229,7 @@ test('robots and sitemap use the preferred host and include every information pa
   const sitemap = readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
   assert.match(robots, /Sitemap:\s*https:\/\/www\.dermaprivate\.app\/sitemap\.xml/);
   for (const route of pages) assert.ok(sitemap.includes(`<loc>https://www.dermaprivate.app${route}</loc>`), `sitemap missing ${route}`);
+  assert.ok(sitemap.includes('<loc>https://www.dermaprivate.app/support/</loc>'), 'sitemap missing /support/');
   assert.doesNotMatch(sitemap, /onrender\.com|https:\/\/dermaprivate\.app\//);
 });
 

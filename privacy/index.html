@@ -44,6 +44,7 @@
         <details class="nav-group">
           <summary>Support</summary>
           <div class="nav-dropdown">
+            <a href="/support/">Support page</a>
             <a href="mailto:support@amanchilabs.com">Email support</a>
             <a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a>
           </div>
@@ -51,7 +52,7 @@
       </nav>
   </div></header>
   <main id="main-content">
-    <section class="legal-hero"><div class="container"><p class="eyebrow">Privacy &amp; data</p><h1>DermaPrivate Privacy Policy</h1><p class="lead">Effective date: October 15, 2026 · Last updated: October 17, 2026</p></div></section>
+    <section class="legal-hero"><div class="container"><p class="eyebrow">Privacy &amp; data</p><h1>DermaPrivate Privacy Policy</h1><p class="lead">Effective date: October 15, 2026 · Last updated: October 28, 2026</p></div></section>
     <article class="container legal-content">
 <p class="status-note"><strong>Privacy contact:</strong> <a href="mailto:support@amanchilabs.com">support@amanchilabs.com</a></p>
 <h2>1. Who we are</h2>
@@ -62,9 +63,9 @@
 <h2>2. Privacy at a glance</h2>
 <p>Your routines, saved products, profile preferences, and check-ins are stored on your device by default.</p>
 <p>We do not provide account-based routine synchronization or operate a cloud backup service for your routines.</p>
-<p>Optional product lookup sends a product name or barcode to Open Beauty Facts when a match is not available in the app’s local lookup cache.</p>
+<p>Product lookup and recommendations check available local records and the 30-day on-device lookup cache before sending a product name, routine-step category, or barcode number to Open Beauty Facts for an online match.</p>
 <p>Optional AI Assist uses your own Groq API key and sends selected information to Groq after you authorize the request.</p>
-<p>Product lookup, remote images, purchases, and external links involve separate services, as described below.</p>
+<p>Product lookup, AI requests, purchases, support email, and user-directed exports or external links involve separate services, as described below.</p>
 <p>Our website provides information about the app and does not process purchases.</p>
 <p>You can use the app’s settings to manage local data and optional AI features.</p>
 <h2>3. Information stored in the mobile app</h2>
@@ -77,19 +78,13 @@
 <p>Local-first storage does not mean that every app record is separately encrypted by DermaPrivate. Device security, passcode protection, and backup settings also affect protection of your information.</p>
 <h2>4. App network requests</h2>
 <p>Online features may disclose ordinary connection information, including your IP address, request time, and technical request headers, to the receiving service and its infrastructure.</p>
-<h3>Catalog updates</h3>
-<p>Automatic catalog checks and downloads are currently disabled. The app does not contact the DermaPrivate catalog service for catalog updates and clears entries downloaded by earlier versions from its local cache.</p>
 <h3>Open Beauty Facts product lookup</h3>
-<p>The app checks its local lookup cache before using Open Beauty Facts.</p>
-<p>If a match is not found and an online lookup is made:</p>
-<ul><li>A product-name lookup sends the search text to a search endpoint.</li><li>A barcode lookup sends the barcode to a product endpoint.</li></ul>
-<p>These requests go directly from your device to Open Beauty Facts. They include an identifying User-Agent containing the DermaPrivate app name, version, and business support email address. They do not include your skin profile or routine.</p>
+<p>The app checks available local catalogs and its on-device lookup cache before using Open Beauty Facts. Successful lookup responses are cached locally for 30 days. Identical lookups made at the same time share one request; the app applies a local limit of 8 requests per 60 seconds and stops waiting after 6 seconds.</p>
+<p>If there is no local match, a product-name or routine-step/category search sends only the search text to Open Beauty Facts’ search endpoint. A lookup by barcode number sends the barcode to its product endpoint.</p>
+<p>These requests go directly from your device to Open Beauty Facts. They include an identifying User-Agent containing the DermaPrivate app name, version, and business support email address. They do not include your skin profile, Snapshot answers, ingredient avoidances, pregnancy/nursing context, or routine details.</p>
+<p>The request includes an IP address and technical request metadata needed to return the response. Open Beauty Facts documents IP-based API rate limits, but we have not verified whether lookup query/IP logs are retained or for how long. Its own <a href="https://world.openbeautyfacts.org/privacy">privacy policy</a> applies to its processing.</p>
+<p>Product listings may have missing, incomplete, or outdated ingredient fields. Missing ingredients are treated as unknown. A product match or absence of a listed concern does not establish suitability. You can add an unmatched product manually and enter ingredient text; that text is user-provided and is not independently verified. Product information you deliberately save to your routine may remain after the lookup cache expires.</p>
 <p>Amanchi Labs does not receive these searches or barcodes through this lookup process.</p>
-<p>Successful lookup results are cached locally for 30 days. Product information you deliberately save to your routine may remain after the lookup cache expires.</p>
-<p>Open Beauty Facts processes requests under its own <a href="https://world.openbeautyfacts.org/privacy">privacy policy</a>.</p>
-<h3>Remote product images</h3>
-<p>When the app displays a remotely hosted product image, it requests that image from the host identified by the product lookup result or suggestion. Hosts may include product-data services and content-delivery providers.</p>
-<p>The image host receives the requested URL and ordinary connection information. The app does not intentionally include your routine or skin profile in image requests. Image hosts may change as the catalog changes.</p>
 <h2>5. Optional AI Assist and Groq</h2>
 <p>AI Assist is optional. It is not required for core routine setup, editing, daily check-ins, or on-device compatibility rules.</p>
 <p>To use AI Assist, you configure your own Groq API key. Authorized requests are sent directly from your device to Groq, with the key supplied as an authentication credential.</p>
@@ -112,9 +107,9 @@
 <p>If you purchase Pro Offline or restore a purchase, Apple processes the payment and provides purchase or entitlement information needed to enable the relevant features.</p>
 <p>DermaPrivate does not receive your payment-card number. Apple maintains its transaction records under its own terms and privacy policy.</p>
 <p>Clearing routine or profile information does not cancel a purchase or delete Apple’s transaction records. You can use the app’s restore-purchase function with the relevant Apple account.</p>
-<h3>Brand, retailer, and affiliate links</h3>
-<p>When you choose to open an external product link, the destination receives the requested URL and ordinary connection information. Its privacy practices apply after you follow the link.</p>
-<p>Where a link is an affiliate link, we identify the commercial relationship near the shopping action. Affiliate links may route through an affiliate network and contain publisher, campaign, or product identifiers used to attribute a purchase. We may receive commission or transaction reports associated with qualifying purchases.</p>
+<h3>Brand and retailer links</h3>
+<p>When you choose to open a product link, the app opens a direct brand website or a Google product search. The destination receives the URL, which may include the product or brand name, and ordinary connection information. Its privacy practices apply after you follow the link.</p>
+<p>This release does not configure affiliate links or send affiliate campaign identifiers. DermaPrivate does not receive notice that you opened a product link or made a purchase through it.</p>
 <p>The app does not intentionally include your skin profile or routine information in shopping URLs.</p>
 <p>A product link is not a guarantee of suitability. Product information, prices, and availability may be incomplete or change.</p>
 <h2>7. The DermaPrivate website</h2>
@@ -141,7 +136,7 @@
 <p>We retain support correspondence and operational records for as long as reasonably necessary for their stated purposes, including responding to requests, security, troubleshooting, and legal obligations.</p>
 <p>Technical-log retention depends on the service and its configuration. Contact us with questions about information we control.</p>
 <h3>Information held by other organizations</h3>
-<p>Deleting local data does not delete information already processed by Apple, Groq, Open Beauty Facts, image hosts, affiliate networks, or retailers. Their retention practices and applicable privacy rights continue to apply.</p>
+<p>Deleting local data does not delete information already processed by Apple, Groq, Open Beauty Facts, email providers, or a product-link destination. Their retention practices and applicable privacy rights continue to apply.</p>
 <p>Where a provider processes information on our behalf, we will handle applicable requests concerning information under our control.</p>
 <h2>11. Your choices and privacy requests</h2>
 <p>You can:</p>
@@ -169,7 +164,7 @@
     <div class="footer-brand-block"><a class="footer-brand" href="/" aria-label="DermaPrivate home"><img src="/assets/brand/app-icon.png" alt="" width="44" height="44"><span><strong>DermaPrivate</strong><small>BY AMANCHI LABS</small></span></a><p>Your private skincare routine companion.</p><a class="footer-company" href="https://amanchilabs.com/" target="_blank" rel="noopener noreferrer">A product by Amanchi Labs ↗</a></div>
     <nav class="footer-group" aria-label="Product links"><h2>Product</h2><a href="/#how-it-works">How it works</a><a href="/#features">Features</a><a href="/#faq">FAQ</a></nav>
     <nav class="footer-group" aria-label="Privacy and accessibility links"><h2>Privacy & access</h2><a href="/privacy/">Privacy Policy</a><a href="/ai-data/">AI & data use</a><a href="/ai-setup/">AI setup</a><a href="/accessibility/">Accessibility</a><a href="/content-rights/">Content Rights</a><a href="/terms/">Terms</a></nav>
-    <nav class="footer-group" aria-label="Support links"><h2>Support</h2><a href="mailto:support@amanchilabs.com">Email support</a><a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a></nav>
+    <nav class="footer-group" aria-label="Support links"><h2>Support</h2><a href="/support/">Support page</a><a href="mailto:support@amanchilabs.com">Email support</a><a href="mailto:support@amanchilabs.com?subject=Accessibility%20feedback">Accessibility feedback</a></nav>
   </div><div class="container footer-bottom"><p>© 2026 Amanchi Labs. All rights reserved.</p><a href="mailto:support@amanchilabs.com">Contact</a><a href="/privacy/">Privacy</a></div></footer>
   <script src="/script.js" defer></script>
 </body>
