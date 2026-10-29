@@ -89,7 +89,7 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
   assert.equal(meta(html, 'og:url'), 'https://www.dermaprivate.app/privacy/');
   assert.match(html, /<h1>DermaPrivate Privacy Policy<\/h1>/);
   assert.match(html, /Effective date:\s*October 15, 2026/i);
-  assert.match(html, /Last updated:\s*October 28, 2026/i);
+  assert.match(html, /Last updated:\s*October 29, 2026/i);
   assert.match(html, /Amanchi Labs LLC, doing business as Amanchi Labs/);
   assert.match(html, /100 most recent entries/);
   assert.match(html, /cached locally for 30 days/);
