@@ -42,8 +42,8 @@ test('homepage leads with compatibility and explains owned products, Snapshot, T
   assert.match(html, /<h1[^>]*>Know what you’re layering\.<\/h1>/i);
   assert.match(html, /products you already own/i);
   assert.match(html, /ingredient compatibility/i);
-  assert.match(html, /14-day preview and with Pro/i);
-  assert.match(html, /skin profile and routine stay on your iPhone by default/i);
+  assert.match(html, /14-day full-access trial/i);
+  assert.match(html, /skin profile and routine stay on your device by default/i);
   for (const label of ['Routine Snapshot', 'Today', 'Journey']) assert.match(html, new RegExp(label, 'i'));
   assert.doesNotMatch(html, /illustrative app preview|role=["']img["'][^>]*illustrative/i);
 });
@@ -53,8 +53,11 @@ test('how it works and features explain the compatibility, Today, and Pro gates'
   for (const phrase of ['Know what you’re layering', 'Start with your products', 'Check how products fit together', 'Follow today’s plan', 'Ingredient compatibility', 'A plan for today', 'Journey', 'Optional AI Assist']) {
     assert.ok(html.toLowerCase().includes(phrase.toLowerCase()), `missing content: ${phrase}`);
   }
-  assert.match(html, /With Pro, use Journey to review your routine history over time/i);
-  assert.match(html, /Ingredient compatibility is available during the 14-day preview and with Pro/i);
+  assert.match(html, /During the full-access trial and with Pro, use Journey to review your routine history over time/i);
+  assert.match(html, /Ingredient compatibility is included during the full-access trial and after the one-time Pro purchase/i);
+  assert.match(html, /starts 14 days of full access to Pro/);
+  assert.match(html, /\$9\.99 USD/);
+  assert.doesNotMatch(html, /14-day preview|Routine setup, product entry, and daily check-ins are free/i);
   assert.match(html, /Your skin profile and routine stay on your device by default/i);
   assert.match(html, /Snapshot is a cosmetic planning tool\. It does not assess or diagnose a skin condition\./i);
   assert.doesNotMatch(html, /class=["']journey-label["']>\s*0[1-3]\s*[—–-]/i, 'step labels should not repeat their numbered index');
@@ -89,9 +92,12 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
   assert.equal(meta(html, 'og:url'), 'https://www.dermaprivate.app/privacy/');
   assert.match(html, /<h1>DermaPrivate Privacy Policy<\/h1>/);
   assert.match(html, /Effective date:\s*October 15, 2026/i);
-  assert.match(html, /Last updated:\s*October 29, 2026/i);
+  assert.match(html, /Last updated:\s*October 30, 2026/i);
   assert.match(html, /Amanchi Labs LLC, doing business as Amanchi Labs/);
   assert.match(html, /100 most recent entries/);
+  assert.match(html, /14-day full-access trial/);
+  assert.match(html, /start time of your 14-day full-access trial on this device/i);
+  assert.match(html, /Apple App Store on iOS or Google Play on Android/i);
   assert.match(html, /cached locally for 30 days/);
   assert.match(html, /support@amanchilabs\.com/);
   for (let section = 1; section <= 16; section++) assert.match(html, new RegExp(`<h2>${section}\\.`), `missing policy section ${section}`);
@@ -244,7 +250,7 @@ test('FAQ reflects current direct brand and Google links without affiliate claim
   const html = htmlFor('/');
   const faq = html.match(/<section id=["']faq["'][\s\S]*?<\/section>/i)?.[0] ?? '';
   assert.equal((faq.match(/class=["']faq-item["']/g) ?? []).length, 8);
-  for (const phrase of ['Do I have to use Routine Snapshot, or can I build my own routine?', 'What does ingredient compatibility tell me?', 'Is DermaPrivate medical advice?', 'Where is my routine and skin profile stored?', 'What information is sent when I use an online feature?', 'What does AI Assist share, and can it change my routine?', 'Are product links affiliate links?', 'What’s included with Pro?']) assert.ok(faq.includes(phrase), `missing FAQ: ${phrase}`);
+  for (const phrase of ['Do I have to use Routine Snapshot, or can I build my own routine?', 'What does ingredient compatibility tell me?', 'Is DermaPrivate medical advice?', 'Where is my routine and skin profile stored?', 'What information is sent when I use an online feature?', 'What does AI Assist share, and can it change my routine?', 'Are product links affiliate links?', 'What’s included with Pro, and how does the trial work?']) assert.ok(faq.includes(phrase), `missing FAQ: ${phrase}`);
   assert.match(faq, /direct brand website or a Google product search/i);
   assert.match(faq, /does not configure Rakuten or another affiliate network/i);
   assert.match(faq, /does not earn commission or purchase attribution/i);
