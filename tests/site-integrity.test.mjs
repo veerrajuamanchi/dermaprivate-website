@@ -90,15 +90,17 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
   const html = htmlFor('/privacy/');
   assert.equal(canonical(html), 'https://www.dermaprivate.app/privacy/');
   assert.equal(meta(html, 'og:url'), 'https://www.dermaprivate.app/privacy/');
-  assert.match(html, /<h1>DermaPrivate Privacy Policy<\/h1>/);
+  assert.match(html, /<h1>Privacy Policy<\/h1>/);
   assert.match(html, /Effective date:\s*October 15, 2026/i);
-  assert.match(html, /Last updated:\s*October 30, 2026/i);
+  assert.match(html, /Last updated:\s*October 31, 2026/i);
   assert.match(html, /Amanchi Labs LLC, doing business as Amanchi Labs/);
   assert.match(html, /100 most recent entries/);
   assert.match(html, /14-day full-access trial/);
-  assert.match(html, /start time of your 14-day full-access trial on this device/i);
+  assert.match(html, /trial start time is stored on this device/i);
   assert.match(html, /Apple App Store on iOS or Google Play on Android/i);
-  assert.match(html, /cached locally for 30 days/);
+  assert.match(html, /App Lock controls opening the app and helps conceal app-switcher previews/i);
+  assert.match(html, /does not encrypt local routine records, operating-system backups, or files shared or exported/i);
+  assert.match(html, /cached on the device for 30 days/);
   assert.match(html, /support@amanchilabs\.com/);
   for (let section = 1; section <= 16; section++) assert.match(html, new RegExp(`<h2>${section}\\.`), `missing policy section ${section}`);
 });
@@ -106,8 +108,8 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
 test('build-13 privacy copy matches product lookup behavior and accurately scopes OBF log evidence', () => {
   const html = htmlFor('/privacy/');
   assert.match(html, /checks available local catalogs and its on-device lookup cache/i);
-  assert.match(html, /product-name or routine-step\/category search/i);
-  assert.match(html, /lookup by barcode number/i);
+  assert.match(html, /product-name or routine-step lookup sends only the search text/i);
+  assert.match(html, /barcode lookup sends the barcode to a product endpoint/i);
   assert.match(html, /go directly from your device to Open Beauty Facts/i);
   assert.match(html, /30 days/i);
   assert.match(html, /8 requests per 60 seconds/i);
@@ -249,8 +251,10 @@ test('robots and sitemap use the preferred host and include every information pa
 test('FAQ reflects current direct brand and Google links without affiliate claims', () => {
   const html = htmlFor('/');
   const faq = html.match(/<section id=["']faq["'][\s\S]*?<\/section>/i)?.[0] ?? '';
-  assert.equal((faq.match(/class=["']faq-item["']/g) ?? []).length, 8);
-  for (const phrase of ['Do I have to use Routine Snapshot, or can I build my own routine?', 'What does ingredient compatibility tell me?', 'Is DermaPrivate medical advice?', 'Where is my routine and skin profile stored?', 'What information is sent when I use an online feature?', 'What does AI Assist share, and can it change my routine?', 'Are product links affiliate links?', 'What’s included with Pro, and how does the trial work?']) assert.ok(faq.includes(phrase), `missing FAQ: ${phrase}`);
+  assert.equal((faq.match(/class=["']faq-item["']/g) ?? []).length, 9);
+  for (const phrase of ['Do I have to use Routine Snapshot, or can I build my own routine?', 'What does ingredient compatibility tell me?', 'Is DermaPrivate medical advice?', 'Where is my routine and skin profile stored?', 'What information is sent when I use an online feature?', 'What does AI Assist share, and can it change my routine?', 'Are product links affiliate links?', 'What’s included with Pro, and how does the trial work?', 'Can I add an App Lock?']) assert.ok(faq.includes(phrase), `missing FAQ: ${phrase}`);
+  assert.match(faq, /App Lock is optional and off by default/);
+  assert.match(faq, /does not encrypt information stored or exported/);
   assert.match(faq, /direct brand website or a Google product search/i);
   assert.match(faq, /does not configure Rakuten or another affiliate network/i);
   assert.match(faq, /does not earn commission or purchase attribution/i);
