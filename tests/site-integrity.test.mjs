@@ -92,7 +92,7 @@ test('Privacy page uses the permanent URL and the supplied effective and updated
   assert.equal(meta(html, 'og:url'), 'https://www.dermaprivate.app/privacy/');
   assert.match(html, /<h1>Privacy Policy<\/h1>/);
   assert.match(html, /Effective date:\s*October 15, 2026/i);
-  assert.match(html, /Last updated:\s*October 31, 2026/i);
+  assert.match(html, /Last updated:\s*November 4, 2026/i);
   assert.match(html, /Amanchi Labs LLC, doing business as Amanchi Labs/);
   assert.match(html, /100 most recent entries/);
   assert.match(html, /14-day full-access trial/);
@@ -259,4 +259,14 @@ test('FAQ reflects current direct brand and Google links without affiliate claim
   assert.match(faq, /does not configure Rakuten or another affiliate network/i);
   assert.match(faq, /does not earn commission or purchase attribution/i);
   assert.doesNotMatch(faq, /may earn a commission|conditional.*affiliate|affiliate status depends/i);
+});
+
+
+test('ingredient extraction disclosure requires source text and separates user review from verification', () => {
+  const privacy = htmlFor('/privacy/');
+  assert.match(privacy, /brand, exact product name, variant\/market and ingredient declaration text/);
+  assert.match(privacy, /does not include your skin profile or routine history/);
+  assert.match(privacy, /Suggestions start unchecked and require review against your actual product packaging/);
+  assert.match(privacy, /package comparison separately from independent catalog verification/);
+  assert.match(privacy, /save without ingredients without making that confirmation/);
 });
